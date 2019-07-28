@@ -13,6 +13,10 @@ From now on to look cool you can just run this python file in your Terminal or C
 T O T A L A T T E N D E N C E as well as  A T T E N D E N C E BY S U B J E C T 
 
 
+
+Read the "Installation_Procedure" File and Configure .
+
+
 ### EXECUTION 
 
  Now in order to execute 
