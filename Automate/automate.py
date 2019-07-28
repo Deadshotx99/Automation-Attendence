@@ -29,11 +29,13 @@ email = driver.find_element(By.XPATH,'.//*[@id="txtusername"]')
 email.send_keys(content[0])
 password = driver.find_element(By.XPATH,'.//*[@id="password"]')
 password.send_keys(content[1])
-login = driver.find_element(By.XPATH,'.//*[@id="Submit"]')
-time.sleep(0.75)
-login.click()
-element1 = driver.find_element_by_link_text('Attendance')
+
+
+
+element1 = driver.find_element_by_xpath('.//*[@id="MainContent_ad"]/a/h5')
+
 element1.click()
+
 time.sleep(3)
 element2 = driver.find_element(By.XPATH,'.//*[@id="MainContent_lbltotal"]')
 
@@ -50,35 +52,40 @@ print("\n")
 print('F e t c h i n g  B y  S u b j e c t   A t t e n d e n c e ...')
 
 bysubject = []
+subjectcode = []
+subjects = []
 
 button = driver.find_element(By.XPATH,'.//*[@id="MainContent_Button4"]')
 button.click()
 
 time.sleep(0.75)
 
-sub0 = driver.find_element(By.XPATH,'.//*[@id="MainContent_GridView4_lblid_0"]')
-bysubject.append(sub0.text)
-sub1 = driver.find_element(By.XPATH,'.//*[@id="MainContent_GridView4_lblid_1"]')
-bysubject.append(sub1.text)
-sub2 = driver.find_element(By.XPATH,'.//*[@id="MainContent_GridView4_lblid_2"]')
-bysubject.append(sub2.text)
-sub3 = driver.find_element(By.XPATH,'.//*[@id="MainContent_GridView4_lblid_3"]')
-bysubject.append(sub3.text)
-sub4 = driver.find_element(By.XPATH,'.//*[@id="MainContent_GridView4_lblid_4"]')
-bysubject.append(sub4.text)
-sub5 = driver.find_element(By.XPATH,'.//*[@id="MainContent_GridView4_lblid_5"]')
-bysubject.append(sub5.text)
-sub6 = driver.find_element(By.XPATH,'.//*[@id="MainContent_GridView4_lblid_6"]')
-bysubject.append(sub6.text)
-sub7 = driver.find_element(By.XPATH,'.//*[@id="MainContent_GridView4_lblid_7"]')
-bysubject.append(sub7.text)
+#subjectcode
+temp1 = './/*[@id="MainContent_GridView4"]/tbody/tr['
+for x in range(2,10):
+    sub1 = temp1 + str(x)+']/td[1]'
+    k = driver.find_element_by_xpath(sub1)
+    subjectcode.append(k.text)
 
-data = {'SUBJECT CODE': ['EID205', 'EID201', 'ECS201', 'ECS221', 'EMA203', 'EID221', 'EID203', 'EID223'],
-        'SUBJECT NAME': ['D C', 'C + +', 'P L P', 'C E W', 'P S', 'C + + _ LAB', 'C O A', 'U N I X _ LAB'],
-        ' ATTENDENCE ': bysubject,
 
-        }
-dframe = DataFrame(data)
+#subjectname
+temp2 = './/*[@id="MainContent_GridView4"]/tbody/tr['
+for x in range(2,10):
+    sub2 = temp2 + str(x)+']/td[2]'
+    j = driver.find_element_by_xpath(sub2)
+    subjects.append(j.text)
+
+#by_subject_attendence
+temp3 = './/*[@id="MainContent_GridView4_lblid_'
+for x in range(0,8):
+    sub3 = temp3 + str(x)+'"]'
+    l = driver.find_element_by_xpath(sub3)
+    bysubject.append(l.text)
+
+
+
+
+
 
 print('\n')
 
@@ -86,11 +93,22 @@ print('B y   S u b j e c t  D e t a i l s :  ')
 
 print('\n')
 
+data = {'SUBJECT CODE': subjectcode,
+        'SUBJECT NAME': subjects,
+        ' ATTENDENCE ': bysubject,
+
+        }
+
+dframe = DataFrame(data)
 
 print(dframe)
 
 
-driver.close()
+
+
+
+
+
 
 
 
