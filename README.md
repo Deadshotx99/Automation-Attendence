@@ -99,7 +99,8 @@ password@123     >>> Example_password
 
 # Now in order to execute 
 
-# 0.Change the directory the REPO Directory
+# 0.Change the directory to  the REPO Directory ( USING $cd )
+
 # 1.activate the Virtual Environment
 
 >> Enter the command
@@ -107,7 +108,7 @@ password@123     >>> Example_password
 # 2. $ python automate.py
 
 # NOTE:- MAKE SURE THAT YOU ARE IN THE VIRTUAL ENVIRONMENT SO THAT THE PACKAGES ARE ACCESSED FOR THE PROGRAM TO RUN
-
+# NOTE:- YOU CAN ALSO RUN THIS CODE USING AN IDE 
 # >>> PROGRAM WILL BE EXECUTED <<<<
 
 
