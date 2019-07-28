@@ -76,9 +76,29 @@ From now on to look cool you can just run this python file in your Terminal or C
 #  visit this page  -- http://chromedriver.chromium.org/downloads
 # NOTE -- DOWNLOAD ONLY THE VERSION WHICH CORRESPONDS TO THE VERION OF "YOUR CHROME BROWSER" 
 
+# >>>>> MOST IMPORTANT <<<< 
+
+# 8.COPY the file "logindetails.txt" and PASTE it INSIDE THE "VENV" DIRECTORY
+# NOW OPEN FILE << 
+# 1. Delete the content that file has Initially 
+>> #userid
+>> #password 
+
+# 2. Enter the USERID(REGISTRATION NUMBER) AND PASSWORD in NEWLINES
+# TYPE AS FOLLOWS 
+>> INSIDE FILE << 
+
+121992391230     >>> Example_id
+password@123     >>> Example_password
+
+# SAVE AND CLOSE 
+
+
+
 # EXECUTION 
 
 # Now in order to execute 
+
 # 0.Change the directory the REPO Directory
 # 1.activate the Virtual Environment
 
