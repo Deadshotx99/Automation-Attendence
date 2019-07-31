@@ -12,7 +12,8 @@ From now on to look cool you can just run this python file in your Terminal or C
 
 T O T A L A T T E N D E N C E as well as  A T T E N D E N C E BY S U B J E C T 
 
-<img width="1359" alt="Automation:Attendence" src="https://user-images.githubusercontent.com/45916202/62005858-e5aaf180-b156-11e9-8487-58a64625880e.png">
+
+<img width="1213" alt="Screenshot 2019-07-31 at 6 48 52 PM" src="https://user-images.githubusercontent.com/45916202/62215091-e8f6e500-b3c3-11e9-8b1f-71cbf74a4500.png">
 
 
 
