@@ -6,7 +6,12 @@ from time import sleep
 from pandas import DataFrame
 import pyttsx3
 
-audio = pyttsx3.init()
+audio1 = pyttsx3.init()
+audio2 = pyttsx3.init()
+audio3 = pyttsx3.init()
+audio4 = pyttsx3.init()
+audio5 = pyttsx3.init()
+name   = pyttsx3.init()
 
 
 BANNER = r'''
@@ -73,7 +78,9 @@ time.sleep(0.5)
 submit = driver.find_element_by_xpath('.//*[@id="Submit"]')
 submit.click()
 
-
+Name = driver.find_element_by_xpath('.//*[@id="lblinf"]')
+name.say('Hello'+ Name.text)
+#Attendance_link
 element1 = driver.find_element_by_xpath('.//*[@id="MainContent_ad"]/a/h5')
 
 element1.click()
@@ -87,12 +94,15 @@ aud = element2.text
 
 print("Y o u r  T o T a l  A t t e n d e n c e  is : ",element2.text)
 
-audio.say("Your Total Attendence is  "+ aud)
 
-audio.say("Fetching your Attendence of Each subject")
+audio1.say("Your Total Attendence is  "+ aud)
+audio1.runAndWait()
 
-audio.say('it will take just a moment ')
+audio2.say("Fetching your Attendence of Each subject")
+audio2.runAndWait()
 
+audio3.say('it will take just a moment ')
+audio3.runAndWait()
 
 
 
@@ -146,10 +156,11 @@ print('\n')
 
 print('B y   S u b j e c t  D e t a i l s :  ')
 
-audio.say('Your Attendence by Each Subject is Displayed below ')
+audio4.say('Your Attendence by Each Subject is Displayed below ')
+audio4.runAndWait()
+audio5.say('Thank you')
+audio5.runAndWait()
 
-audio.say('Thank you')
-audio.runAndWait()
 print('\n')
 
 data = {'S U B J E C T C O D E': subjectcode,
@@ -162,6 +173,8 @@ dframe = DataFrame(data)
 print(dframe)
 
 driver.close()
+
+
 
 
 
